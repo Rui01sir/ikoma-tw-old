@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage/>}/>
         <Route path="Company" element={<Company/>}/>
-        <Route path="Page404" element={<Page404/>}/>
+        <Route path="*" element={<Page404/>}/>
       </Routes>
     <Footer/>
     </BrowserRouter>  
