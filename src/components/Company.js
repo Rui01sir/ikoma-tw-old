@@ -4,7 +4,7 @@ function Company(){
     return(
         <div>
             <div className="banner-page">
-                <img src="./img/as9s0-yjbxd.webp" alt="Company-banner"></img>
+                <img src={`${process.env.PUBLIC_URL}/img/as9s0-yjbxd.webp`} alt="Company-banner"></img>
             </div>
             {/* company-page */}
             <div className="company-page">
