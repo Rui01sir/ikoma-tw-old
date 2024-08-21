@@ -81,7 +81,7 @@ function Homepage(){
                         <Link to="/Company" alt="go-company" >COMPANY<img src="./img/next-icon-b.svg" alt="icon-next"></img></Link>
                     </div>
                     <div className="content-3">
-                        <img src="./img/a2ylt-uyy6q.webp" alt="contect-img"></img>
+                        <img src={`${process.env.PUBLIC_URL}/img/a2ylt-uyy6q.webp`} alt="contect-img"></img>
                     </div>
                 </div>
                 <div className="content-color">
