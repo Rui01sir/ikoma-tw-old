@@ -34,7 +34,7 @@ function Navbar() {
             <nav>
                 <div className="navbar">
                     <div className="nav-logo">
-                        <Link to="/">
+                        <Link to="Homepage">
                             <img src="./img/web-logo-n.webp" alt="nav-logo"/>
                         </Link>
                     </div>
