@@ -4,6 +4,12 @@
     font-family: "Lexend Zetta", sans-serif;
 }
 
+.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -40,7 +46,32 @@ li{
   list-style-type:none ;
 }
 
-/* Navbar 基本樣式 */
+/* TopButton */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color:rgba(255, 255, 255, 0.8);
+  border: 1px solid #000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-to-top:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Navbar */
 nav {
   width: 100%;
   height: 150px;
@@ -247,6 +278,7 @@ nav button {
     margin-left: 0%;
     transform: rotate(-45deg) translate(0px, 0px);
 }
+
 }
 
 @media (max-width: 600px) {
@@ -262,9 +294,7 @@ nav button {
   }
 }
 
-.no-scroll {
-  overflow: hidden;
-}
+
 
 /* Footer */
 footer{
@@ -445,55 +475,16 @@ footer{
   }
 }
 
-/* Homepage */
-/* .home-banner{
-  width: 100%;
-  height: 800px;
-  display: flex;
-}
-
-.home-banner__img{
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
-}
-
-.contact-us-btn{
-  width: 578px;
-  height: 100%;
-  position: absolute;
-  margin-top: 20%;
-  display: flex;
-}
-
-.contact-us-btn a{
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.contact-us-text{
-  margin-left: 100px;
-  position: absolute;
-  font-size: 24px;
-  display: flex;
-  align-items: center;
-}
-
-.contact-us-text img{
-  width: 14px;
-  margin-left: 35px;
-} */
 .home-banner{
   width: 100%;
   height: 800px;
   display: flex;
+  position: relative;
 }
 
 .home-banner__img{
   width: 100%;
-  height: 800px;
+  height: 100%;
   position: absolute;
   z-index: -2;
 }
@@ -508,7 +499,7 @@ footer{
 
 .home-banner__content{
   width: 100%;
-  height: 100%;
+  height: 800px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -520,7 +511,7 @@ footer{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 133px;
+  margin-bottom: 100px;
 }
 
 .home-banner__btn{
@@ -564,16 +555,27 @@ footer{
 @media(max-width:1400px){
   .home-banner__text h2{
     font-size: 2rem;
+    color: #fff;
   }
 }
 
 @media(max-width:1200px){
-  .home-banner__box{
+  .home-banner__content{
     width: 100%;
+    /* height: 100%; */
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 133px;
+    align-items: flex-end;
+  }
+
+  .home-banner__box{
+    width: 100%;
+    /* height: 100%; */
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom:10%;
   }
 
   .contact-us-btn{
@@ -594,18 +596,18 @@ footer{
   }
 
   .contact-us-text p{
-    font-size: 24px;
+    font-size: 1rem;
     margin-left: 10%;
   }
   
   .contact-us-text img{
-    width: 3%;
+    width: 0.8rem;
     margin-left: 10%;
   }
 
   .home-banner__btn{
-    width: 40%;
-    height: 100%;
+    width: 60%;
+    /* height: 100%; */
   }
   
   .contact-us-text{
@@ -616,8 +618,11 @@ footer{
   }
 
   .home-banner__text{
-    width: 40%;
-    margin-right: 2.5%;
+    width: 50%;
+    /* height: 100%; */
+    margin-right: 0%;
+    margin-left: 5%;
+    margin-bottom: 8%;
   } 
   
   .home-banner__text h2{
@@ -626,15 +631,25 @@ footer{
 }
 
 @media(max-width:765px){
-  .contact-us-btn{
-    width: 40%;
-    position: absolute;
-    margin-top: 8%;
+  .home-banner{
+    /* width: 100%; */
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .home-banner__content{
+    width: 100%;
+    height: 500px;
     display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 
   .contact-us-btn{
-    top: 23%;
+    width: 70%;
+    position: absolute;
+    /* margin-top: 2%; */
+    display: flex;
   }
   
   .contact-us-btn a{
@@ -643,13 +658,14 @@ footer{
   }
   
   .contact-us-text img{
-    width: 3%;
-    margin-left: 10%;
+    width: 0.5rem;
+    margin-left: 8%;
   }
   
   .contact-us-text{
-    width: 100%;
+    /* width: 70%; */
     display: flex;
+    /* justify-content: center; */
     align-items: center;
     /* margin-left: 10%; */
     /* position: absolute; */
@@ -769,7 +785,7 @@ footer{
   }
 
   .box-3 {
-    height: 200px;
+    height: 300px;
     overflow: hidden;
   }
   
@@ -778,6 +794,16 @@ footer{
     height: 100%;
     object-fit: cover;
     object-position: center;
+  }
+
+  .box-4 {
+    /* width: 90%; */
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 5%; */
   }
 }
 
@@ -986,7 +1012,7 @@ footer{
 
   .content-next-2{
     width: 100%;
-    height:100%;
+    height:120%;
     position: absolute;
     display: flex;
     justify-content: flex-start;
@@ -1043,12 +1069,6 @@ footer{
 }
 
 @media(max-width:1200px){
-  .home-banner{
-    /* width: 100%;
-    height: 100%; */
-    overflow: hidden;
-  }
-
   .banner-404-text{
     width: 100%;
     display: flex;
@@ -1062,7 +1082,7 @@ footer{
 
   .banner-404-text h3{
     font-size: 18px;
-    line-height: 50px;
+    line-height: 30px;
     text-align: center;
   }
 }
@@ -1160,6 +1180,7 @@ footer{
 
 .company-service__concent{
   width: 83.3333%;
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -1174,7 +1195,7 @@ footer{
 
 .company-service__box-text{
   width: 100%;
-  height: 100%;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1221,7 +1242,7 @@ footer{
 }
 
 .company-target__font{
-  width: 936px;
+  width: 80%;
 }
 
 .company-target__font h2{
@@ -1238,6 +1259,14 @@ footer{
   overflow: hidden;
 }
 
+.company-target__img img{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: right;
+}
+
 .company-target__box{
   width: 100%;
   height:971px;
@@ -1247,6 +1276,38 @@ footer{
   align-items: flex-start;
   overflow: hidden;
   z-index: -1;
+}
+
+/* .company-target__box-2{
+  width: 100%;
+  height: 971px;
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  overflow: hidden;
+  z-index: -1;
+} */
+
+@media (max-width:1680px) {
+  .company-service__img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .company-service__box{
+    width: 80%;
+    height: 28%;
+    display: flex;
+    flex-direction: column;
+    background-color: #3B322E;
+    margin: 2%;
+    margin-bottom: 0;
+  }
 }
 
 @media(max-width:1200px){
@@ -1313,11 +1374,17 @@ footer{
   }
 
   .company-service__box{
-    /* width: 100%;
-    height: 100%; */
+    width: 100%;
+    height: 28%;
     display: flex;
     flex-direction: column;
     background-color: #3B322E;
+    margin: 2%;
+    margin-bottom: 0;
+  }
+
+  .company-service__text h2{
+    font-size: 1rem;
   }
 
   .company-service__img {
@@ -1329,17 +1396,12 @@ footer{
     flex-wrap: wrap;
   }
 
-  .company-service__box{
-    margin: 2%;
-    margin-bottom: 0;
-  }
-
   .company-target {
     width: 100%;
     height: 971px;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .company-target__text{
@@ -1353,12 +1415,13 @@ footer{
 
   .company-target__content{
     width: 100%;
-    /* height: 100%; */
+    height: 60%;
     background-color: #FF9900;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 4%;
   }
 
   .company-target__img{
@@ -1378,6 +1441,28 @@ footer{
   .company-target__font{
     width:100%;
   }
+
+  .company-target__box{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  /* .company-target__box-2{
+    width: 100%;
+    height: 971px;
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    overflow: hidden;
+    z-index: -1;
+  } */
 }
 
 @media(max-width:765px){
@@ -1447,15 +1532,15 @@ footer{
 
   .company-target{
     width: 100%;
-    height: 100%;
+    height: 700px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
   }
 
   .company-target__font h2{
     font-size: 1rem;
-    margin-bottom: 2;
+    margin-bottom: 2%;
   }
   
   .company-target__font p{
