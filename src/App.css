@@ -54,10 +54,10 @@ li{
   background-color:rgba(255, 255, 255, 0.8);
   border: 1px solid #000;
   color: white;
-  border: none;
+  /* border: none; */
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
   font-size: 24px;
   display: flex;
   align-items: center;
@@ -69,6 +69,17 @@ li{
 
 .scroll-to-top:hover {
   background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width:600px) {
+  .scroll-to-top {
+    width: 45px;
+    height: 45px;
+  }
+
+  .scroll-to-top img{
+    width: 17px;
+  }
 }
 
 /* Navbar */
@@ -691,6 +702,13 @@ footer{
   background-color: #D9D9D9;
   cursor: pointer;
   margin-left: 1%;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.box-2.animate__slideInUp {
+  opacity: 1;
+  animation-duration: 3s;
 }
 
 .box-3 {
@@ -822,6 +840,13 @@ footer{
   height: 441px;
   display: flex;
   justify-content: space-between;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.content-1.animate__fadeInUp{
+  opacity: 1;
+  animation-duration: 2s;
 }
 
 .content-2{
@@ -891,6 +916,13 @@ footer{
   margin-top: 81px;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.content-5.animate__fadeIn{
+  opacity: 1;
+  animation-duration: 3s;
 }
 
 .content-map{
@@ -904,6 +936,13 @@ footer{
   display: flex;
   justify-content: flex-end;
   z-index: -1;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.content-next-1.animate__slideInLeft{
+  opacity: 1;
+  animation-duration: 3s;
 }
 
 .content-next-2{
@@ -913,9 +952,17 @@ footer{
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: -1;
+  opacity: 0;
+  transition: opacity 3s;
 }
+
+.content-next-2.animate__slideInLeft{
+  opacity: 1;
+  animation-duration: 3s;
+}
+
 
 @media(max-width:1400px){
   .content-2 p{
@@ -1017,7 +1064,7 @@ footer{
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: -1;
   }
   
@@ -1383,10 +1430,6 @@ footer{
     margin-bottom: 0;
   }
 
-  .company-service__text h2{
-    font-size: 1rem;
-  }
-
   .company-service__img {
     width: 100%;
     height: 100%;
@@ -1444,7 +1487,7 @@ footer{
 
   .company-target__box{
     width: 100%;
-    height:100%;
+    height:970px;
     position: absolute;
     display: flex;
     justify-content: flex-end;
@@ -1530,6 +1573,10 @@ footer{
     position: absolute;
   }
 
+  .company-service__text h2{
+    font-size: 1rem;
+  }
+
   .company-target{
     width: 100%;
     height: 700px;
@@ -1537,6 +1584,18 @@ footer{
     justify-content: center;
     align-items: flex-end;
   }
+
+  .company-target__box{
+    width: 100%;
+    height:700px;
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    overflow: hidden;
+    z-index: -1;
+  }
+
 
   .company-target__font h2{
     font-size: 1rem;
@@ -1547,4 +1606,90 @@ footer{
     font-size: 0.5rem;
     line-height: 1.5;
   }
+}
+
+/* Contact-page */
+.Contact{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.Contact-page{
+  width: 83.3333%;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Contact-add__img{
+  width: 650px;
+  height: 650px;
+  position: absolute;
+  z-index: -1;
+}
+
+.Contact-add__img img{
+  width: 100%;
+  height: 100%;
+}
+
+.Contact-add__text{
+  width: 100%;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.Contact-form{
+  width: 920px;
+  margin-right: 32px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.required {
+  color: red;
+  margin-left: 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+textarea {
+  height: 100px;
+}
+
+.phone-number {
+  display: flex;
+}
+
+.phone-number select {
+  margin-right: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
