@@ -12,11 +12,11 @@ function Footer(){
                         </Link>
                     </div>
                     <ul>
-                <li><Link to="#">COMPANY</Link></li>
+                <li><Link to="/Campany">COMPANY</Link></li>
                 <li><Link to="#">NEWS</Link></li>
                 <li><Link to="#">PRODUCT</Link></li>
                 <li><Link to="#">SUPPORT</Link></li>
-                <li><Link to="#">CONTACT</Link></li>
+                <li><Link to="/Contact">CONTACT</Link></li>
                     </ul>   
                 </div>
                 <div className="footer-text">
