@@ -1,15 +1,43 @@
-import React from "react";
-import {Link} from "react-router-dom"
-import Googlemap from '../components/Googlemap'
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Googlemap from '../components/Googlemap';
 
-function Homepage(){
-    return(
+function Homepage() {
+    useEffect(() => {
+        const boxes = document.querySelectorAll('.box-2, .content-1, .content-5, .content-next-1, .content-next-2');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('box-2')) {
+                        entry.target.classList.add('animate__fadeInUp');
+                    } else if (entry.target.classList.contains('content-1')) {
+                        entry.target.classList.add('animate__fadeInUp');
+                    } else if (entry.target.classList.contains('content-5')) {
+                        entry.target.classList.add('animate__fadeIn');
+                    } else if (entry.target.classList.contains('content-next-1')) {
+                        entry.target.classList.add('animate__slideInLeft');
+                    } else if (entry.target.classList.contains('content-next-2')) {
+                        entry.target.classList.add('animate__slideInLeft');
+                    }
+                    entry.target.classList.add('animate__animated');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        boxes.forEach(box => {
+            observer.observe(box);
+        });
+    }, []);
+
+    return (
         <div>
             <div className="home-banner">
-                <div className="home-banner__img">
+                <div className="home-banner__img animate__animated animate__fadeIn">
                     <img src="./img/ah4em-9udwd.webp" alt="home-banner"></img>
                 </div>
-                <div className="home-banner__content">
+                <div className="home-banner__content animate__animated animate__slideInLeft">
                     <div className="home-banner__box">
                         <div className="home-banner__btn">
                             <Link to="Page404">
@@ -19,56 +47,44 @@ function Homepage(){
                                 </div>
                             </Link>
                             <div className="contact-us-btn">
-                            <img src="./img/contact-us-btn.webp" alt="contact-us-btn"></img>
+                                <img src="./img/contact-us-btn.webp" alt="contact-us-btn"></img>
                             </div>
                         </div>
-                    <div className="home-banner__text">
-                        <h2>Absolutely supply good quality and comfort shock absorber</h2>
-                    </div>
-                    </div>
-                </div>
-                {/* <div className="contact-us-btn">
-                    <Link to="#">
-                        <div className="contact-us-text">
-                            CONTACT US
-                            <img src="./img/next-icon-b.svg" alt="icon-next"></img>
+                        <div className="home-banner__text">
+                            <h2>Absolutely supply good quality and comfort shock absorber</h2>
                         </div>
-                        <img src="./img/contact-us-btn.webp" alt="contact-us-btn"></img>
-                    </Link>
+                    </div>
                 </div>
-                <div className="home-banner-text">
-                    <h2>Absolutely supply good quality and comfort shock absorber</h2>
-                </div> */}
             </div>
 
             {/* Card */}
             <div className="box-1">
-                <div className="box-2" onclick="window.location.href='#'">
+                <div className="box-2" onClick={() => window.location.href = '#'}>
                     <div className="box-3">
-                        <img src="./img/Rectangle 64.png" alt="news-img"></img>
+                        <img src="./img/a6e05-i715q.webp" alt="news-img"></img>
                     </div>
                     <div className="box-4">
                         <h3>NEWS</h3>
                         <img src="./img/next-icon-b.svg" alt="icon-next-box"></img>
                     </div>
                 </div>
-                <div className="box-2" style={{backgroundColor: '#FF9900'}} onclick="window.location.href='#'">
+                <div className="box-2" style={{ backgroundColor: '#FF9900' }} onClick={() => window.location.href = '#'}>
                     <div className="box-3">
-                        <img src="./img/Rectangle 52.png" alt="news-img"></img>
+                        <img src="./img/ahrxv-tdyro.webp" alt="news-img"></img>
                     </div>
                     <div className="box-4">
                         <h3>PRODUCT</h3>
                         <img src="./img/next-icon-b.svg" alt="icon-next-box"></img>
                     </div>
                 </div>
-                    <div className="box-2" onclick="window.location.href='#'">
-                <div className="box-3">
-                    <img src="./img/Rectangle 51.png" alt="news-img"></img>
-                </div>
-                <div className="box-4" style={{backgroundColor: '#3B322E'}}>
-                    <h3 style={{color: '#FFF'}}>SUPROT</h3>
-                    <img src="./img/next-icon-w.svg" alt="icon-next-box" ></img>
-                </div>
+                <div className="box-2" onClick={() => window.location.href = '#'}>
+                    <div className="box-3">
+                        <img src="./img/aksph-8aazk.webp" alt="news-img"></img>
+                    </div>
+                    <div className="box-4" style={{ backgroundColor: '#3B322E' }}>
+                        <h3 style={{ color: '#FFF' }}>SUPROT</h3>
+                        <img src="./img/next-icon-w.svg" alt="icon-next-box" ></img>
+                    </div>
                 </div>
             </div>
 
@@ -90,9 +106,9 @@ function Homepage(){
 
             {/* Address */}
             <div className="content-4">
-                    <div className="content-next-1">
-                        <img src="./img/a4yhc-u70on.svg" alt="content-next-img"></img>
-                    </div>
+                <div className="content-next-1">
+                    <img src="./img/a4yhc-u70on.svg" alt="content-next-img"></img>
+                </div>
                 <div className="content-5">
                     <h2>Address</h2>
                     <div className="content-map">
@@ -103,10 +119,8 @@ function Homepage(){
                     <img src="./img/a4yhc-u70on.svg" alt="content-next-img"></img>
                 </div>
             </div>
-
         </div>
     );
-
 }
 
 export default Homepage;
