@@ -7,11 +7,15 @@ function Navbar() {
     const [menuActive, setMenuActive] = useState(false);
 
     useEffect(() => {
+        // 根据路径选择语言
         if (location.pathname === '/Page404') {
             setSelectedLanguage('CN');
         } else {
             setSelectedLanguage('EN');
         }
+
+        // 确保菜单在页面路径改变时被关闭
+        setMenuActive(false);
     }, [location.pathname]);
 
     const toggleMenu = () => {
@@ -20,21 +24,45 @@ function Navbar() {
 
     useEffect(() => {
         const navMenu = document.querySelector('nav ul');
+
         if (menuActive) {
-          navMenu.classList.add('active');
-          document.body.classList.add('no-scroll');
+            navMenu.classList.add('active');
+            document.body.classList.add('no-scroll');
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.scrollY}px`;
         } else {
-          navMenu.classList.remove('active');
-          document.body.classList.remove('no-scroll');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
         }
-      }, [menuActive]);
-      
+
+        return () => {
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(document.body.style.top || '0') * -1);
+        };
+    }, [menuActive]);
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            const navMenu = document.querySelector('nav');
+            if (navMenu && !navMenu.contains(event.target)) {
+                setMenuActive(false);
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
     return (
         <div>
             <nav>
                 <div className="navbar">
                     <div className="nav-logo">
-                        <Link to="Homepage">
+                        <Link to="/">
                             <img src="./img/web-logo-n.webp" alt="nav-logo"/>
                         </Link>
                     </div>
@@ -43,7 +71,7 @@ function Navbar() {
                         <li><Link to="#">NEWS</Link></li>
                         <li><Link to="#">PRODUCT</Link></li>
                         <li><Link to="#">SUPPORT</Link></li>
-                        <li><Link to="#">CONTACT</Link></li>
+                        <li><Link to="/Contact">CONTACT</Link></li>
                         <div className="language">
                             <Link
                                 to="/"
