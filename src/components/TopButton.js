@@ -27,7 +27,7 @@ function TopButton() {
     return(
         isVisible && (
             <button className="scroll-to-top" onClick={scrollToTop}>
-                <img src='./img/topbutton-icon.svg' alt='Top-button'></img>
+                <img src={`${process.env.PUBLIC_URL}/img/topbutton-icon.svg`} alt='Top-button'></img>
             </button>
             )
     )
