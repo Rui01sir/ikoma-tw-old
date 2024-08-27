@@ -1,29 +1,36 @@
 import './App.css';
 import 'animate.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from './components/HomePage';
-import Company from './components/Company';
-import Navbar from './components/Navbar';
-import Page404 from './components/Page404';
-import Footer from './components/Footer';
-import TopButton from './components/TopButton';
-import Contact from './components/Contact';
-import Product from './components/Product';
+import Navbar from './components/common/Navbar';
+import HomePage from './components/page/HomePage';
+import Company from './components/page/Company';
+import Contact from './components/page/Contact';
+import Product from './components/page/Product';
+import Page404 from './components/page/Page404';
+import TopButton from './components/common/TopButton';
+import Footer from './components/common/Footer';
+import Loading from './components/animations/Loading';
+
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const handleLoadingFinish = () => {
+    setIsLoading(false);
+  };
+
   return (
     <Router>
-      <Navbar />
+      {!isLoading && <Navbar />}
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/Company" element={<Company />} />
-        <Route path="/Contact" element={<Contact />}/>
-        <Route path="/Product" element={<Product />}/>
+        <Route path="/" element={<Loading Component={HomePage} onLoadingFinish={handleLoadingFinish} />} />
+        <Route path="/Company" element={<Loading Component={Company} onLoadingFinish={handleLoadingFinish} />} />
+        <Route path="/Contact" element={<Loading Component={Contact} onLoadingFinish={handleLoadingFinish} />} />
+        <Route path="/Product" element={<Loading Component={Product} onLoadingFinish={handleLoadingFinish} />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
       <TopButton />
-      <Footer />
+      {!isLoading && <Footer />}
     </Router>
   );
 }
