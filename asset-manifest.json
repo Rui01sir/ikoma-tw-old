@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ikoma-tw/static/css/main.4c10a4cd.css",
-    "main.js": "/ikoma-tw/static/js/main.baa139f5.js",
+    "main.js": "/ikoma-tw/static/js/main.c19c6952.js",
     "static/js/453.ef84d9ce.chunk.js": "/ikoma-tw/static/js/453.ef84d9ce.chunk.js",
     "index.html": "/ikoma-tw/index.html",
     "main.4c10a4cd.css.map": "/ikoma-tw/static/css/main.4c10a4cd.css.map",
-    "main.baa139f5.js.map": "/ikoma-tw/static/js/main.baa139f5.js.map",
+    "main.c19c6952.js.map": "/ikoma-tw/static/js/main.c19c6952.js.map",
     "453.ef84d9ce.chunk.js.map": "/ikoma-tw/static/js/453.ef84d9ce.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4c10a4cd.css",
-    "static/js/main.baa139f5.js"
+    "static/js/main.c19c6952.js"
   ]
 }
