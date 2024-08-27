@@ -7,14 +7,12 @@ function Navbar() {
     const [menuActive, setMenuActive] = useState(false);
 
     useEffect(() => {
-        // 根据路径选择语言
         if (location.pathname === '/Page404') {
             setSelectedLanguage('CN');
         } else {
             setSelectedLanguage('EN');
         }
 
-        // 确保菜单在页面路径改变时被关闭
         setMenuActive(false);
     }, [location.pathname]);
 
@@ -104,4 +102,3 @@ function Navbar() {
 }
 
 export default Navbar;
-

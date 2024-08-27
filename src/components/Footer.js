@@ -14,7 +14,7 @@ function Footer(){
                     <ul>
                 <li><Link to="/Campany">COMPANY</Link></li>
                 <li><Link to="#">NEWS</Link></li>
-                <li><Link to="#">PRODUCT</Link></li>
+                <li><Link to="/Product">PRODUCT</Link></li>
                 <li><Link to="#">SUPPORT</Link></li>
                 <li><Link to="/Contact">CONTACT</Link></li>
                     </ul>   
@@ -23,10 +23,10 @@ function Footer(){
             <p>Absolutely supply good quality and comfort shock absorber</p>
             <div className="footer-icon">
                 <ul>
-                    <li><Link to="#"><img src="./img/instagram.webp"></img></Link></li>
-                    <li><Link to="#"><img src="./img/email.webp"></img></Link></li>
-                    <li><Link to="#"><img src="./img/facebook.webp"></img></Link></li>
-                    <li><Link to="#"><img src="./img/whatapp.webp"></img></Link></li>
+                    <li><Link to="https://www.instagram.com/"><img src="./img/instagram.webp" alt="instagram-icon"></img></Link></li>
+                    <li><a href="mailto:ikoma@ikoma-tw.com"><img src="./img/email.webp" alt="email-icon"></img></a></li>
+                    <li><Link to="https://www.facebook.com/"><img src="./img/facebook.webp" alt="facebook-icon"></img></Link></li>
+                    <li><Link to="https://www.whatsapp.com/"><img src="./img/whatapp.webp" alt="whatapp-icons"></img></Link></li>
                 </ul>
             </div>
                 </div>

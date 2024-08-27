@@ -1,10 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Company(){
+    useEffect(() => {
+        const boxes = document.querySelectorAll('.company-page, .company-caption__text, .company-service, .company-target__box, .company-target__text, .company-target__img, .company-caption__img, .company-service__box');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('company-page')) {
+                        entry.target.classList.add('animate__fadeInUp');
+                    } else if (entry.target.classList.contains('company-caption__text')) {
+                        entry.target.classList.add('animate__fadeInUp');
+                    } else if (entry.target.classList.contains('company-service')) {
+                        entry.target.classList.add('animate__fadeIn');
+                    } else if (entry.target.classList.contains('company-target__box')) {
+                        entry.target.classList.add('animate__slideInLeft');
+                    } else if (entry.target.classList.contains('company-target__text')) {
+                        entry.target.classList.add('animate__fadeInUp');
+                    } else if (entry.target.classList.contains('company-target__img')) {
+                        entry.target.classList.add('animate__fadeInUp');
+                    } else if (entry.target.classList.contains('company-caption__img')) {
+                        entry.target.classList.add('animate__fadeIn');
+                    } else if (entry.target.classList.contains('company-service__box')) {
+                        entry.target.classList.add('animate__fadeInUp');
+                    }
+                    entry.target.classList.add('animate__animated');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        boxes.forEach(box => {
+            observer.observe(box);
+        });
+    }, []);
     return(
         <div>
             <div className="banner-page">
-                <img src={`${process.env.PUBLIC_URL}/img/as9s0-yjbxd.webp`} alt="Company-banner"></img>
+                <img src={`${process.env.PUBLIC_URL}/img/as9s0-yjbxd.webp`}  alt="Company-banner"></img>
             </div>
             {/* company-page */}
             <div className="company-page">
@@ -14,7 +47,7 @@ function Company(){
                         <p>All of our product conform to the latest international safety standards as we ll as ISO and QS 9000 systems. Meanwhile, to better safeguard the integrity and stability of our shock absorber. We only imports the best key parts and components from advance countries. Some of the vital elements include oil seals, o-rings, damping oil and so on.</p>
                     </div>
                     <div className="company-page__img">
-                        <img src="./img/a9obu-txk9w.webp" alt="company-page__img"></img>
+                        <img src={`${process.env.PUBLIC_URL}/img/a9obu-txk9w.webp`}  alt="company-page__img"></img>
                     </div>
                 </div>
             </div>
@@ -24,8 +57,8 @@ function Company(){
                     <h2>We marketed and distributed exclusively under out brand name "IKOMA". </h2>
                     <p>Currently export destinations cover the world. Our products are mainly targeted at Japanese car model but are as well made available to serviceal European car makes. We absolutely supply good quality and comfort shock absorber to our customer.</p>
                 </div>
-                <div className="company-caption__img">
-                    <img src="./img/a9tiv-l5rzi.webp" alt="company-caption__img"></img>
+                <div className="company-caption__img animate__animated animate__fadeIn">
+                    <img src={`${process.env.PUBLIC_URL}/img/a9tiv-l5rzi.webp`}  alt="company-caption__img"></img>
                 </div>
             </div>
             {/* company-service */}
@@ -38,25 +71,25 @@ function Company(){
                     </div>
                     <div className="company-service__img">
                         <div className="company-service__box">
-                            <img src="./img/aon0v-j1toy.webp" alt="aon0v-j1toy"></img>
+                            <img src={`${process.env.PUBLIC_URL}/img/aon0v-j1toy.webp`} alt="aon0v-j1toy"></img>
                             <div className="company-service__box-text">
                                 <p>Auto Shock Absorbers</p>
                             </div>
                         </div>
                         <div className="company-service__box">
-                            <img src="./img/a3syw-manln.webp" alt="a3syw-manln"></img>
+                            <img src={`${process.env.PUBLIC_URL}/img/a3syw-manln.webp`} alt="a3syw-manln"></img>
                             <div className="company-service__box-text">
                                 <p>Shock Absorber Accessories</p>
                             </div>
                         </div>
                         <div className="company-service__box">
-                            <img src="./img/ae76v-fgngb.webp" alt="ae76v-fgngb"></img>
+                            <img src={`${process.env.PUBLIC_URL}/img/ae76v-fgngb.webp`} alt="ae76v-fgngb"></img>
                             <div className="company-service__box-text">
                                 <p>OEM for Own Brand</p>
                             </div>
                         </div>
                         <div className="company-service__box">
-                            <img src="./img/arwge-95coa.webp" alt="arwge-95coa"></img>
+                            <img src={`${process.env.PUBLIC_URL}/img/arwge-95coa.webp`} alt="arwge-95coa"></img>
                             <div className="company-service__box-text">
                                 <p>Retail & Wholesale for Shopping Mall</p>
                             </div>
@@ -66,6 +99,9 @@ function Company(){
             </div>
             {/* company-target */}
             <div className="company-target">
+                <div className="company-target__box">
+                    <img src={`${process.env.PUBLIC_URL}/img/a4yhc-u70on.svg`}  alt="a4yhc-u70on"></img>
+                </div>
                 <div className="company-target__content">
                 <div className="company-target__text">
                     <div className="company-target__font">
@@ -81,12 +117,12 @@ function Company(){
                     </div>
                 </div>
                 <div className="company-target__img">
-                    <img src="./img/aqw5r-2t0j2.webp" alt="aqw5r-2t0j2"></img>
+                    <img src={`${process.env.PUBLIC_URL}/img/aqw5r-2t0j2.webp`} alt="aqw5r-2t0j2"></img>
                 </div>
                 </div>
-                <div className="company-target__box">
-                    <img src="./img/a4yhc-u70on.svg" alt="a4yhc-u70on"></img>
-                </div>
+                {/* <div className="company-target__box-2">
+                    <img src={`${process.env.PUBLIC_URL}/img/a4yhc-u70on.svg`} alt="a4yhc-u70on"></img>
+                </div> */}
             </div>
         </div>
     );
