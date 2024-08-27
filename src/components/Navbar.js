@@ -67,11 +67,11 @@ function Navbar() {
                         </Link>
                     </div>
                     <ul>
-                        <li><Link to="/Company">COMPANY</Link></li>
-                        <li><Link to="#">NEWS</Link></li>
-                        <li><Link to="#">PRODUCT</Link></li>
-                        <li><Link to="#">SUPPORT</Link></li>
-                        <li><Link to="/Contact">CONTACT</Link></li>
+                        <li><Link to="Company">COMPANY</Link></li>
+                        <li><Link to="*">NEWS</Link></li>
+                        <li><Link to="Product">PRODUCT</Link></li>
+                        <li><Link to="*">SUPPORT</Link></li>
+                        <li><Link to="Contact">CONTACT</Link></li>
                         <div className="language">
                             <Link
                                 to="/"
@@ -104,3 +104,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
