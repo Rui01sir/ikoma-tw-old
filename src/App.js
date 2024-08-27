@@ -1,7 +1,7 @@
 import './App.css';
 import 'animate.css';
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './components/HomePage';
 import Company from './components/Company';
 import Navbar from './components/Navbar';
