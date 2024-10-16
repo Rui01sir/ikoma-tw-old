@@ -19,8 +19,8 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
-    "build:zeabur": "cross-env PUBLIC_URL=/ react-scripts build",
+    "build": "cross-env PUBLIC_URL=/ikoma-tw react-scripts build",
+    "build:zeabur": "cross-env PUBLIC_URL=/ikoma-tw react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
