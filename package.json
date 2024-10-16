@@ -14,14 +14,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-  "start": "react-scripts start",
-  "predeploy": "npm run build",
-  "build:gh": "cross-env PUBLIC_URL=https://username.github.io/repository-name react-scripts build",
-  "build:zeabur": "cross-env PUBLIC_URL=/ react-scripts build",
-  "deploy": "npm run build:gh && gh-pages -d build",
-  "test": "react-scripts test",
-  "eject": "react-scripts eject",
-  "postbuild": "react-snap"
+    "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "build": "react-scripts build",
+    "build:zeabur": "cross-env PUBLIC_URL=/ react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
