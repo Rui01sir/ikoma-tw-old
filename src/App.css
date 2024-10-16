@@ -112,12 +112,26 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+<<<<<<< HEAD
   margin-left: 8.3333%;
   margin-right: 8.3333%;
+=======
+  /* margin-left: 8.3333%;
+  margin-right: 8.3333%; */
+>>>>>>> 113709b (first commit)
 }
 
 .nav-logo {
   width: 215px;
+<<<<<<< HEAD
+=======
+  /* height: 40px; */
+  /* margin-right: 17%; */
+}
+
+.nav-logo a img {
+  width: 100%;
+>>>>>>> 113709b (first commit)
 }
 
 nav ul {
@@ -130,7 +144,11 @@ nav ul {
   margin: 0;
   /* position: relative; */
   transition: transform 0.3s ease;
+<<<<<<< HEAD
   margin-left: 2%;
+=======
+  margin-left: 17.08%;
+>>>>>>> 113709b (first commit)
 }
 
 nav li {
@@ -224,8 +242,13 @@ nav button {
     align-items: center;
     transform: translateY(0);
     padding: 0;
+<<<<<<< HEAD
     padding-top: 0%;
     padding-bottom: 100vh;
+=======
+    padding-top: 10%;
+    padding-bottom: 100%;
+>>>>>>> 113709b (first commit)
   }
 
   nav li {
@@ -246,6 +269,11 @@ nav button {
     align-items: center;
     margin-left: 0px;
     margin-top: 10%;
+  }
+
+  .language a img {
+    width: 16px;
+    display: block;
   }
 
   .language a img {
@@ -514,6 +542,7 @@ footer{
   transition: opacity 5s;
 }
 
+<<<<<<< HEAD
 .home-banner__img.animate__slideInUp {
   opacity: 1;
   animation-duration: 5s;
@@ -594,6 +623,38 @@ footer{
     font-size: 2rem;
     color: #fff;
   }
+=======
+/* .home-banner-text{
+  width: 692px;
+  position: absolute;
+  top: 657px;
+  right: 85px;
+} */
+
+.contact-us-btn{
+  position: absolute;
+  top: 58%;
+  /* z-index: 10; */
+  
+}
+
+.contact-us-btn a{
+  height: 100%;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.contact-us-text img{
+  width: 14px;
+  margin-left: 35px;
+}
+
+.contact-us-text{
+  margin-left: 100px;
+  position: absolute;
+  font-size: 24px;
+>>>>>>> 113709b (first commit)
 }
 
 @media(max-width:1200px){
@@ -652,6 +713,7 @@ footer{
     height: 100%;
     display: flex;
     align-items: center;
+<<<<<<< HEAD
   }
 
   .home-banner__text{
@@ -665,6 +727,23 @@ footer{
   .home-banner__text h2{
     font-size: 1.5rem;
   }
+=======
+    margin-left: 10%;
+    /* position: absolute; */
+    font-size: 18px;
+  }
+
+  /* .home-banner-text{
+    width: 40%;
+    position: absolute;
+    top: 28%;
+    right: 10px;
+  } */
+
+  /* .home-banner-text h2{
+    font-size: 0.5rem;
+  } */
+>>>>>>> 113709b (first commit)
 }
 
 @media(max-width:765px){
@@ -683,10 +762,17 @@ footer{
   }
 
   .contact-us-btn{
+<<<<<<< HEAD
     width: 70%;
     position: absolute;
     /* margin-top: 2%; */
     display: flex;
+=======
+    /* position: absolute; */
+    top: 23%;
+    /* z-index: 10; */
+    
+>>>>>>> 113709b (first commit)
   }
   
   .contact-us-btn a{
@@ -704,10 +790,28 @@ footer{
     display: flex;
     /* justify-content: center; */
     align-items: center;
+<<<<<<< HEAD
     /* margin-left: 10%; */
     /* position: absolute; */
     font-size: 50%;
   }
+=======
+    margin-left: 10%;
+    /* position: absolute; */
+    font-size: 0.5rem;
+  }
+
+  /* .home-banner-text{
+    width: 40%;
+    position: absolute;
+    top: 26%;
+    right: 10px;
+  } */
+
+  /* .home-banner-text h2{
+    font-size: 0.5rem;
+  } */
+>>>>>>> 113709b (first commit)
 }
 
 /* Card */
@@ -797,7 +901,11 @@ footer{
     flex-direction: row;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
     /* margin-top: 5%; */
+=======
+    margin-top: 5%;
+>>>>>>> 113709b (first commit)
   }
 
   .box-4 img{
@@ -853,6 +961,119 @@ footer{
 
 /* Content */
 .content{
+<<<<<<< HEAD
+=======
+  width: 100%;
+  height: 441px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 120px;
+}
+
+.content-1{
+  width: 83.3333%;
+  height: 441px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-2{
+  width: 785px;
+  margin-right: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-2 a{
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #fff;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-2 h2{
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+.content-2 p{
+  font-size: 1rem;
+  height: 225px;
+  margin: 0;
+  line-height: 50px;
+  margin-bottom: 50px;
+}
+
+.content-2 img{
+  width: 12px;
+  margin-left: 30px;
+}
+
+.content-3{
+  width: 785px;
+  overflow: hidden;
+  position: relative;
+}
+
+.content-3 img{
+  height: 100%;
+}
+
+.content-color{
+  width: 100%;
+  height: 100px;
+  background-color: #FF9900;
+  position: absolute;
+  z-index: -10;
+}
+
+.content-4{
+  width:100% ;
+  height: 884px;
+  display: flex;
+  justify-content: center;
+}
+
+.content-5{
+  width: 83.3333%;
+  height: 687px;
+  margin-top: 81px;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-map{
+  width: 100%;
+  height: 600px;
+}
+
+.content-next-1{
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.content-next-2{
+  width: 102%;
+  height:950px;
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  z-index: -99;
+}
+
+
+/* Page404 */
+.banner-404{
+  position: relative;
+>>>>>>> 113709b (first commit)
   width: 100%;
   height: 441px;
   display: flex;
